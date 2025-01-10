@@ -1,0 +1,2 @@
+class TickerDatum < ApplicationRecord
+end
