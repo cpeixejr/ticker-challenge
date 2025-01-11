@@ -1,0 +1,19 @@
+/* ticker-frontend/src/components/Child.css */
+.ticker-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ticker-table th, .ticker-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.ticker-table th {
+  background-color: #f2f2f2;
+}
+
+.ticker-table tr:hover {
+  background-color: #f1f1f1;
+}

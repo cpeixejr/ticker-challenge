@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTicker } from '../store/actions';
+import './Child.css'; // Adicione a importação do CSS
 
 const Child = ({ ticker }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,22 @@ const Child = ({ ticker }) => {
     <div>
       <h2>Ticker Data</h2>
       {tickerData ? (
-        <pre>{JSON.stringify(tickerData, null, 2)}</pre>
+        <table className="ticker-table"> {/* Adicionando a tabela */}
+          <thead>
+            <tr>
+              <th>Campo</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(tickerData).map(([key, value]) => (
+              <tr key={key}>
+                <td>{key}</td>
+                <td>{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <p>No data available</p>
       )}
